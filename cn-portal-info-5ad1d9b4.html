@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 杂志专题式索引页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f6f5f2;
+            font-family: system-ui, 'Helvetica Neue', 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            line-height: 1.65;
+            color: #1e1e1e;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page {
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅 – 极简留白 */
+        .hero {
+            margin: 0 0 2rem 0;
+            padding: 3.5rem 0 1.5rem 0;
+            border-bottom: 1px solid #d4d0cb;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 350;
+            letter-spacing: -0.015em;
+            line-height: 1.15;
+            color: #111;
+        }
+        .hero .sub {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #6b5f55;
+            font-weight: 400;
+            border-left: 3px solid #9f8b7a;
+            padding-left: 1rem;
+        }
+        .hero .sub span {
+            background: #e4ddd4;
+            padding: 0.2rem 0.5rem;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+            border-radius: 2px;
+            color: #3d352e;
+        }
+
+        /* 正文卡片区 – 窄栏、清晰层级 */
+        .section {
+            margin: 0 0 2.8rem 0;
+        }
+        .section h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1e1e1e;
+            letter-spacing: -0.01em;
+            border-bottom: 1px solid #d4d0cb;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+        .section p {
+            margin: 0.9rem 0;
+            font-size: 1rem;
+            color: #2c2c2c;
+        }
+        .section p + p {
+            margin-top: -0.2rem;
+        }
+
+        /* 索引风格·资料卡片 */
+        .index-card {
+            background: #ffffff;
+            padding: 1.4rem 1.6rem;
+            margin: 1.2rem 0;
+            border-radius: 0px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 0 0 1px #eae6e0 inset;
+        }
+        .index-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #30281f;
+            letter-spacing: 0.02em;
+        }
+        .index-card p {
+            font-size: 0.92rem;
+            margin: 0.2rem 0;
+            color: #3d3a35;
+        }
+        .index-card .meta {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #8f7f6e;
+            margin-top: 0.5rem;
+            border-top: 1px dashed #ddd7cf;
+            padding-top: 0.5rem;
+        }
+
+        /* FAQ 摘要式 */
+        .faq-mini {
+            background: #f0ece6;
+            padding: 1.6rem 1.6rem;
+            margin: 2rem 0 1.5rem 0;
+            border-left: 3px solid #7f6d5b;
+        }
+        .faq-mini h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: #1e1e1e;
+            border: none;
+            display: block;
+        }
+        .faq-mini dt {
+            font-weight: 500;
+            margin-top: 0.8rem;
+            font-size: 0.95rem;
+            color: #2b2621;
+        }
+        .faq-mini dd {
+            margin: 0.15rem 0 0.2rem 0.8rem;
+            font-size: 0.9rem;
+            color: #4a4239;
+        }
+
+        /* 页尾访问提示 */
+        .footer-note {
+            margin: 2.8rem 0 1.2rem 0;
+            padding: 1.2rem 0 0.6rem 0;
+            border-top: 1px solid #d4d0cb;
+            font-size: 0.9rem;
+            color: #3d362f;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.4rem;
+        }
+        .footer-note a {
+            color: #2e271f;
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+            text-decoration-color: #b3a79a;
+            font-weight: 500;
+        }
+        .footer-note a:hover {
+            text-decoration-color: #111;
+            color: #000;
+        }
+        .footer-note .hint {
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 550px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero { padding: 1.6rem 0 1rem 0; }
+            .index-card { padding: 1rem 1.2rem; }
+            .faq-mini { padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 首页横幅 -->
+    <div class="hero">
+        <h1>爱游戏 · 索引辑</h1>
+        <div class="sub">资料整理 · 信息聚合 <span>专题</span></div>
+    </div>
+
+    <!-- 第一段：背景说明 -->
+    <div class="section">
+        <h2>背景·从资料到线索</h2>
+        <p>游戏行业的内容分布常呈现碎片化：新闻快讯、评测存档、社区讨论、数据统计散落在不同频道，缺少一个稳定的整理节点。<strong><a href="https://cn-portal-aiyouxi.com">爱游戏</a></strong> 从信息索引的视角出发，试图将分散的叙述汇集为可检索的条目，其定位更接近“资料站”而非流量入口——每一篇内容都经过归类与简短摘要，减少重复搜索成本。</p>
+        <p>目前站内已初步形成三类信息簇：作品基础档案、版本更新记录、以及非官方玩法随笔。内容选取偏向实用与客观，不追求爆点，也不刻意回避争议条目。</p>
+    </div>
+
+    <!-- 第二段：特点 / 结构卡片 -->
+    <div class="section">
+        <h2>结构·分类与粒度</h2>
+        <div class="index-card">
+            <h3>档案类 · 作品快速索引</h3>
+            <p>涵盖主流平台（PC / 主机 / 移动端）数百款游戏的发行年份、开发商、核心机制标签及平均通关时长。每一条目附带原文来源链接，方便交叉验证。</p>
+            <span class="meta">收录版本：2025 年初 · 持续增补</span>
+        </div>
+        <div class="index-card">
+            <h3>版本日志 · 补丁与变体</h3>
+            <p>跟踪热门游戏的更新公告、赛季改动、平衡性调整，整理为按时间轴排列的短条目，避免在各大社区反复翻找。（目前覆盖约 30 个长期运营作品。）</p>
+            <span class="meta">更新节奏：每周同步 2–3 篇</span>
+        </div>
+        <div class="index-card">
+            <h3>随笔 · 非正式分析</h3>
+            <p>针对特定关卡设计、机制演变或 UI 细节的独立短评。不提供购买建议，侧重记录观察与推理过程，适合设计向读者参考。</p>
+            <span class="meta">作者署名 · 文责自负</span>
+        </div>
+    </div>
+
+    <!-- 第三段：场景与使用提示 -->
+    <div class="section">
+        <h2>场景·谁可能用到</h2>
+        <p>如果你恰好需要：快速了解某款游戏的背景而不想打开长篇维基；对比多个版本的改动内容；或者寻找一个不包含打分、不强制引导消费的纯信息节点——<a href="https://cn-portal-aiyouxi.com">爱游戏</a> 的目录结构或许能节省一些检索时间。站内没有用户评论区，也暂时不设社交功能，保持整理而非讨论的调性。</p>
+        <p>对于资深入坑者，这里的价值在于“汇编”：把散落的更新帖、数据表、开发者访谈片段按游戏名称归档，跨平台资料在一个域下可见。当然，所有条目均为人工摘录，准确性优先，但难免存在疏漏。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h2>FAQ 摘要 · 常见说明</h2>
+        <dl>
+            <dt>内容来源可信吗？</dt>
+            <dd>每条信息均标注原始出处（官网、补丁说明、媒体访谈等），转载部分保留原文链接，非原创内容不混淆观点。</dd>
+            <dt>站点更新频率？</dt>
+            <dd>资料类每两周合并一次新增条目；版本日志视游戏更新密度而定，平均每周 2–4 篇。</dd>
+            <dt>能否投稿或提交修正？</dt>
+            <dd>目前仅通过站内“资料提交”通道收集补充信息，编辑审核后入库，暂不开放直接编辑权限。</dd>
+        </dl>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <span>索引页 · <a href="https://cn-portal-aiyouxi.com">爱游戏</a> 信息整理</span>
+        <span class="hint">非官方 · 无广告 · 仅归档</span>
+    </div>
+
+</div>
+</body>
+</html>
